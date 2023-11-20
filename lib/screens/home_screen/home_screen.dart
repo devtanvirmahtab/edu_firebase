@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/assets_constants.dart';
-import '../../core/constants/color_constants.dart';
-import '../../core/constants/size_constant.dart';
+import '../../app/core/constants/assets_constants.dart';
+import '../../app/core/constants/color_constants.dart';
+import '../../app/core/constants/size_constant.dart';
 import '../featured_screen/featured_screen.dart';
 
 class BaseScreen extends StatefulWidget {

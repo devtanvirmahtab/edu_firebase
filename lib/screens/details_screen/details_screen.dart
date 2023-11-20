@@ -2,11 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../core/constants/assets_constants.dart';
-import '../../core/constants/color_constants.dart';
-import '../../core/widgets/custom_video_player.dart';
-import '../../core/widgets/lesson_card.dart';
-import '../../models/lesson_model.dart';
+import '../../app/core/constants/assets_constants.dart';
+import '../../app/core/constants/color_constants.dart';
+import '../../app/core/widgets/custom_video_player.dart';
+import '../../app/core/widgets/lesson_card.dart';
+import '../../app/data/models/lesson_model.dart';
+
 
 class DetailsScreen extends StatefulWidget {
   final String title;

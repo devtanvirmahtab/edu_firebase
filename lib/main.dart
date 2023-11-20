@@ -1,7 +1,9 @@
-import 'package:edu_firebase/screens/home_screen/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+
+import 'app/routes/app_pages.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -9,16 +11,11 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    GetMaterialApp(
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
       title: 'Education App',
       theme: ThemeData(
@@ -44,8 +41,7 @@ class MyApp extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-      ),
-      home: const BaseScreen(),
-    );
-  }
+    ),
+    ),
+  );
 }

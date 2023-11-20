@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../core/constants/color_constants.dart';
-import '../../models/course_model.dart';
+import '../../app/core/constants/color_constants.dart';
+import '../../app/data/models/course_model.dart';
 import '../details_screen/details_screen.dart';
 
 class CourseScreen extends StatefulWidget {

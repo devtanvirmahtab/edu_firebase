@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../models/lesson_model.dart';
+import '../../data/models/lesson_model.dart';
 import '../constants/assets_constants.dart';
 
 class LessonCard extends StatelessWidget {

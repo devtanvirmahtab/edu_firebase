@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../core/constants/color_constants.dart';
-import '../../core/constants/size_constant.dart';
-import '../../core/widgets/circle_button.dart';
-import '../../core/widgets/search_textfield.dart';
-import '../../models/category_model.dart';
+import '../../app/core/constants/color_constants.dart';
+import '../../app/core/constants/size_constant.dart';
+import '../../app/core/widgets/circle_button.dart';
+import '../../app/core/widgets/search_textfield.dart';
+import '../../app/data/models/category_model.dart';
 import '../course_screen/course_screen.dart';
 
 class FeaturedScreen extends StatefulWidget {
