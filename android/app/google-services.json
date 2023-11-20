@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "571402167336",
+    "project_id": "edu-fire-2334b",
+    "storage_bucket": "edu-fire-2334b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571402167336:android:2dc182f6c2c87438a0411d",
+        "android_client_info": {
+          "package_name": "com.example.edu_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpU62kJrXiltqaKDmyz5T_CxcifwGb67U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
