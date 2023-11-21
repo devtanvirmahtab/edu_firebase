@@ -61,7 +61,7 @@ class LoginView extends GetView<LoginController> {
                   controller.passwordController.text,
                 ),
                 child: Center(
-                  child: Text(
+                  child: controller.isLoading.value ? const CircularProgressIndicator(color: Colors.white,) : Text(
                     "Login",
                     style:
                     subHeaderTextStyle(color: Colors.white, fontSize: 18.0),
@@ -75,7 +75,9 @@ class LoginView extends GetView<LoginController> {
               children: [
                 Text(
                   "Don't have an account? ",
-                  style: normalTextStyle(),
+                  style: normalTextStyle(
+                    color: Colors.grey,
+                  ),
                 ),
                 InkWell(
                   onTap: () {},

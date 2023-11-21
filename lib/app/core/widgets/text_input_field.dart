@@ -20,9 +20,10 @@ class TextInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: inputController,
       decoration: InputDecoration(
+
         labelText: labelText,
         prefixIcon: Icon(icon),
         labelStyle: normalTextStyle(
