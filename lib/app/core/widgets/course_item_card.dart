@@ -1,21 +1,27 @@
+import 'package:edu_firebase/app/data/models/course_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../routes/app_pages.dart';
 import '../constants/color_constants.dart';
 
 class CourseItemCard extends StatelessWidget {
-  final String title, author, image;
+  final CourseModel course;
 
   const CourseItemCard({
     Key? key,
-    required this.title,
-    required this.author,
-    required this.image,
+    required this.course,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(
+          Routes.COURSE_DETAILS,
+          arguments: course,
+        );
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 10,
@@ -35,7 +41,7 @@ class CourseItemCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.network(
-                  image,
+                  course.courseImage,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -47,9 +53,9 @@ class CourseItemCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title),
+                  Text(course.courseTitle),
                   Text(
-                    "Author $author",
+                    "Author ${course.courseAuthor}",
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   const SizedBox(

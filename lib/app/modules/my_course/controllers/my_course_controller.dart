@@ -1,23 +1,33 @@
 import 'package:get/get.dart';
 
-class MyCourseController extends GetxController {
-  //TODO: Implement MyCourseController
+import '../../../core/constants/app_constant.dart';
+import '../../../core/constants/firebase_constant.dart';
+import '../../../data/models/course_model.dart';
 
-  final count = 0.obs;
+class MyCourseController extends GetxController {
+  final courseList = <CourseModel>[].obs;
+  final String home = "Home";
+
   @override
   void onInit() {
     super.onInit();
+    getCourseData();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  Future<void> getCourseData() async {
+    try {
+      final snapshot = await fireStore.collection('courses').get();
+      final List<CourseModel> courseItem = snapshot.docs
+          .map((data) => CourseModel.fromJson(data.data()))
+          .toList();
+      courseList.value = courseItem;
+    } catch (e) {
+      logger.e('Error retrieving users: $e');
+    }
   }
 
   @override
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

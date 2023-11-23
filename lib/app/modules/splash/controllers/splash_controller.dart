@@ -1,7 +1,11 @@
+import 'dart:ffi';
+
 import 'package:edu_firebase/app/core/constants/firebase_constant.dart';
 import 'package:edu_firebase/app/routes/app_pages.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+
+import '../../../data/global.dart';
 
 class SplashController extends GetxController {
   late Rx<User?> _user;

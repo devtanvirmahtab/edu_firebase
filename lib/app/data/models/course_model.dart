@@ -1,52 +1,20 @@
-class Course {
-  String name;
-  double completedPercentage;
-  String author;
-  String thumbnail;
+class CourseModel {
+  final String courseTitle;
+  final String courseAuthor;
+  final String courseImage;
+  final List<dynamic> coursePlaylist;
 
-  Course({
-    required this.author,
-    required this.completedPercentage,
-    required this.name,
-    required this.thumbnail,
+  CourseModel({
+    required this.courseTitle,
+    required this.courseAuthor,
+    required this.courseImage,
+    required this.coursePlaylist,
   });
-}
 
-List<Course> courses = [
-  Course(
-    author: "DevWheels",
-    completedPercentage: .75,
-    name: "Flutter Novice to Ninja",
-    thumbnail: "assets/icons/flutter.jpg",
-  ),
-  Course(
-    author: "DevWheels",
-    completedPercentage: .60,
-    name: "React Novice to Ninja",
-    thumbnail: "assets/icons/react.jpg",
-  ),
-  Course(
-    author: "DevWheels",
-    completedPercentage: .75,
-    name: "Node - The complete guide",
-    thumbnail: "assets/icons/node.png",
-  ),
-  Course(
-    author: "DevWheels",
-    completedPercentage: .75,
-    name: "Flutter Novice to Ninja",
-    thumbnail: "assets/icons/flutter.jpg",
-  ),
-  Course(
-    author: "DevWheels",
-    completedPercentage: .60,
-    name: "React Novice to Ninja",
-    thumbnail: "assets/icons/react.jpg",
-  ),
-  Course(
-    author: "DevWheels",
-    completedPercentage: .75,
-    name: "Node - The complete guide",
-    thumbnail: "assets/icons/node.png",
-  ),
-];
+  factory CourseModel.fromJson(Map<String, dynamic> json) => CourseModel(
+        courseTitle: json["course_title"],
+        courseAuthor: json["course_author"],
+        courseImage: json["course_image"],
+        coursePlaylist: json["course_playlist"],
+      );
+}

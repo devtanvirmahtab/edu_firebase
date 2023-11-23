@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/course_details/bindings/course_details_binding.dart';
+import '../modules/course_details/views/course_details_view.dart';
 import '../modules/featured/bindings/featured_binding.dart';
 import '../modules/featured/views/featured_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.COURSE_DETAILS,
+      page: () => const CourseDetailsView(),
+      binding: CourseDetailsBinding(),
     ),
   ];
 }

@@ -1,13 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:edu_firebase/app/modules/home/views/components/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../screens/home_screen/home_screen.dart';
 import '../../../core/constants/assets_constants.dart';
 import '../../../core/constants/color_constants.dart';
 import '../../../core/constants/size_constant.dart';
-import '../../../core/widgets/course_item_card.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -28,17 +24,6 @@ class HomeView extends GetView<HomeController> {
             items: [
               BottomNavigationBarItem(
                 activeIcon: Image.asset(
-                  icFeatured,
-                  height: kBottomNavigationBarItemSize,
-                ),
-                icon: Image.asset(
-                  icFeaturedOutlined,
-                  height: kBottomNavigationBarItemSize,
-                ),
-                label: "Featured",
-              ),
-              BottomNavigationBarItem(
-                activeIcon: Image.asset(
                   icLearning,
                   height: kBottomNavigationBarItemSize,
                 ),
@@ -47,6 +32,17 @@ class HomeView extends GetView<HomeController> {
                   height: kBottomNavigationBarItemSize,
                 ),
                 label: "My Learning",
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Image.asset(
+                  icFeatured,
+                  height: kBottomNavigationBarItemSize,
+                ),
+                icon: Image.asset(
+                  icFeaturedOutlined,
+                  height: kBottomNavigationBarItemSize,
+                ),
+                label: "Featured",
               ),
               BottomNavigationBarItem(
                 activeIcon: Image.asset(

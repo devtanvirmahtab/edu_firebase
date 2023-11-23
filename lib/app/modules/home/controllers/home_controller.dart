@@ -7,15 +7,14 @@ class HomeController extends GetxController {
   final selectedIndex = 0.obs;
 
   final pageList = [
-    FeaturedView(),
-    MyCourseView(),
-    ProfileView(),
+    const MyCourseView(),
+    const FeaturedView(),
+    const ProfileView(),
   ];
 
   @override
   void onInit() {
     super.onInit();
-
   }
 
   @override
