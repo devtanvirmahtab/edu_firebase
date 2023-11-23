@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,28 +16,29 @@ class LoginController extends GetxController {
     super.onInit();
   }
 
-  Future<void> loginUser(String email,String password) async {
-    try{
+  Future<void> loginUser(String email, String password) async {
+    try {
       isLoading.value = true;
-      if(email.isNotEmpty && password.isNotEmpty){
-        await firebaseAuth.signInWithEmailAndPassword(email: email, password: password,);
+      if (email.isNotEmpty && password.isNotEmpty) {
+        await firebaseAuth.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
         logger.w("login success");
         Get.offAllNamed(Routes.HOME);
-      }else{
+      } else {
         Get.snackbar("Error", "Please Enter all fields");
       }
       isLoading.value = false;
-    }on FirebaseException catch (e){
+    } on FirebaseException catch (e) {
       isLoading.value = false;
       logger.w("login Error ${e.toString()}");
       Get.snackbar("Error", e.toString());
     }
   }
 
-
   @override
   void onClose() {
     super.onClose();
   }
-
 }

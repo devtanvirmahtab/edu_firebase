@@ -15,7 +15,7 @@ class FeaturedView extends GetView<FeaturedController> {
       ),
       body: const Center(
         child: Text(
-          'ProfileView is working',
+          'Featured is working',
           style: TextStyle(fontSize: 20),
         ),
       ),
