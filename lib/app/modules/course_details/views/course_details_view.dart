@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/widgets/class_lesson_card.dart';
-import '../../../core/widgets/conroll_bottom_sheet.dart';
 import '../../../core/widgets/custom_tab_view.dart';
 import '../../../core/widgets/custom_video_player.dart';
 import '../controllers/course_details_controller.dart';
@@ -23,6 +22,16 @@ class CourseDetailsView extends GetView<CourseDetailsController> {
             color: Colors.black,
           ),
         ),
+        centerTitle: true,
+        title: Obx(() {
+          return Text(
+            controller.course.value?.courseTitle ?? "",
+            style: const TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+                color: Colors.black),
+          );
+        }),
       ),
       body: SingleChildScrollView(
         primary: true,
@@ -38,7 +47,7 @@ class CourseDetailsView extends GetView<CourseDetailsController> {
                           maxWidth: double.infinity, maxHeight: 250),
                       child: CustomVideoPlayer(
                           videoLink:
-                              controller.selectedClass.value?.classVideo ?? ""))
+                          controller.selectedClass.value?.classVideo ?? ""))
                 else
                   const CircularProgressIndicator(
                     color: kDefaultIconDarkColor,
@@ -61,28 +70,28 @@ class CourseDetailsView extends GetView<CourseDetailsController> {
                 ),
                 controller.selectedTag.value == 0
                     ? Obx(() {
-                        return ListView.separated(
-                          primary: false,
-                          separatorBuilder: (_, __) {
-                            return const SizedBox(
-                              height: 20,
-                            );
-                          },
-                          padding: const EdgeInsets.only(top: 20, bottom: 40),
-                          shrinkWrap: true,
-                          itemCount: controller.classList.length,
-                          itemBuilder: (_, index) {
-                            return ClassLessonCard(
-                              classModel: controller.classList[index],
-                              controller: controller,
-                            );
-                          },
-                        );
-                      })
+                  return ListView.separated(
+                    primary: false,
+                    separatorBuilder: (_, __) {
+                      return const SizedBox(
+                        height: 20,
+                      );
+                    },
+                    padding: const EdgeInsets.only(top: 20, bottom: 40),
+                    shrinkWrap: true,
+                    itemCount: controller.classList.length,
+                    itemBuilder: (_, index) {
+                      return ClassLessonCard(
+                        classModel: controller.classList[index],
+                        controller: controller,
+                      );
+                    },
+                  );
+                })
                     : Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
-                        child: Text(controller.course.value?.courseTitle ?? ""),
-                      ),
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Text(controller.course.value?.courseTitle ?? ""),
+                ),
                 const SizedBox(
                   height: 50,
                 ),

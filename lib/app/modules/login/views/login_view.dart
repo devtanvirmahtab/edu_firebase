@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../../../core/constants/app_constant.dart';
@@ -11,6 +10,7 @@ import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,13 +57,21 @@ class LoginView extends GetView<LoginController> {
                   controller.emailController.text,
                   controller.passwordController.text,
                 ),
-                child: Center(
-                  child: controller.isLoading.value ? const CircularProgressIndicator(color: Colors.white,) : Text(
-                    "Login",
-                    style:
-                    subHeaderTextStyle(color: Colors.white, fontSize: 18.0),
-                  ),
-                ),
+                child: Obx(() {
+                  return Center(
+                    child: controller.isLoading.value
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : Text(
+                            "Login",
+                            style: subHeaderTextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                  );
+                }),
               ),
             ),
             appHeight(),
