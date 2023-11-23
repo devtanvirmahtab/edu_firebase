@@ -6,6 +6,7 @@ import '../../../core/constants/app_constant.dart';
 import '../../../core/constants/color_constants.dart';
 import '../../../core/constants/style_constant.dart';
 import '../../../core/widgets/text_input_field.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -18,10 +19,6 @@ class LoginView extends GetView<LoginController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Tiktok Clone",
-              style: headerTextStyle(),
-            ),
             appHeight(),
             Text(
               "Login",
@@ -80,7 +77,9 @@ class LoginView extends GetView<LoginController> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(Routes.SIGNUP);
+                  },
                   child: Text(
                     "Register",
                     style: normalTextStyle(color: buttonColor),

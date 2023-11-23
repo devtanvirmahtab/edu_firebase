@@ -91,17 +91,17 @@ class CourseDetailsView extends GetView<CourseDetailsController> {
           }),
         ),
       ),
-      bottomSheet: BottomSheet(
-        onClosing: () {},
-        backgroundColor: Colors.white,
-        enableDrag: false,
-        builder: (context) {
-          return const SizedBox(
-            height: 80,
-            child: EnrollBottomSheet(),
-          );
-        },
-      ),
+      // bottomSheet: BottomSheet(
+      //   onClosing: () {},
+      //   backgroundColor: Colors.white,
+      //   enableDrag: false,
+      //   builder: (context) {
+      //     return const SizedBox(
+      //       height: 80,
+      //       child: EnrollBottomSheet(),
+      //     );
+      //   },
+      // ),
     );
   }
 }
